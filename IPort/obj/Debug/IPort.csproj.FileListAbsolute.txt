@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\ATS\IPort\bin\Debug\IPort.dll
+C:\Users\user\Desktop\ATS\IPort\bin\Debug\IPort.pdb
+C:\Users\user\Desktop\ATS\IPort\obj\Debug\IPort.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\ATS\IPort\obj\Debug\IPort.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ATS\IPort\obj\Debug\IPort.dll
+C:\Users\user\Desktop\ATS\IPort\obj\Debug\IPort.pdb

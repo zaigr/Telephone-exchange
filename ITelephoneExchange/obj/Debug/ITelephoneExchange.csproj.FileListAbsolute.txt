@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\ATS\ITelephoneExchange\bin\Debug\ITelephoneExchange.dll
+C:\Users\user\Desktop\ATS\ITelephoneExchange\bin\Debug\ITelephoneExchange.pdb
+C:\Users\user\Desktop\ATS\ITelephoneExchange\obj\Debug\ITelephoneExchange.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\ATS\ITelephoneExchange\obj\Debug\ITelephoneExchange.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ATS\ITelephoneExchange\obj\Debug\ITelephoneExchange.dll
+C:\Users\user\Desktop\ATS\ITelephoneExchange\obj\Debug\ITelephoneExchange.pdb

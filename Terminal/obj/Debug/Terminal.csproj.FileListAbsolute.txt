@@ -1,0 +1,11 @@
+C:\Users\user\Desktop\ATS\Terminal\bin\Debug\Terminal.dll
+C:\Users\user\Desktop\ATS\Terminal\bin\Debug\Terminal.pdb
+C:\Users\user\Desktop\ATS\Terminal\obj\Debug\Terminal.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\ATS\Terminal\obj\Debug\Terminal.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ATS\Terminal\obj\Debug\Terminal.dll
+C:\Users\user\Desktop\ATS\Terminal\obj\Debug\Terminal.pdb
+C:\Users\user\Desktop\ATS\Terminal\bin\Debug\ITelephoneExchange.dll
+C:\Users\user\Desktop\ATS\Terminal\bin\Debug\ITerminal.dll
+C:\Users\user\Desktop\ATS\Terminal\bin\Debug\ITelephoneExchange.pdb
+C:\Users\user\Desktop\ATS\Terminal\bin\Debug\ITerminal.pdb
+C:\Users\user\Desktop\ATS\Terminal\obj\Debug\Terminal.csproj.CopyComplete
