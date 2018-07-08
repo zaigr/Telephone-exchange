@@ -11,33 +11,25 @@ namespace ATS.UI
     {
         static void Main(string[] args)
         {
-            var phoneNumbers = new List<int>() { 511131, 434435 };
-            var phones = new HashSet<Phone>();
+            var phoneNumbers = new int[] { 111, 222 };
+            var phones = phoneNumbers.Select(numb => new Phone(numb)).ToList();
 
-            foreach (var number in phoneNumbers) {
-                phones.Add(new Phone(number));
-            }
+            var portNumbers = new List<int>() { 10, 20 };
+            var ports = portNumbers.Select(numb => new Port(numb));
 
-            var ports = new HashSet<IPort>();
-            for (int i = 0; i < 3; ++i) {
-                ports.Add(new Port(i));
-            }
+            var exchange = new TelephoneExchange(new HashSet<IPort>(ports), new HashSet<Phone>(phones), null);
 
-            ITelephoneExchange exchange = new TelephoneExchange(ports, phones, null);
+            var senderTerminal = new Terminal(phones[0], exchange);
+            var reciverTerminal = new Terminal(phones[1], exchange);
 
-            var terminals = new List<ITerminal>();
-            foreach (var phone in phones) {
-                terminals.Add(new ATS.Terminal(phone, exchange));
-            }
+            Console.WriteLine(senderTerminal.ConnectToExchange());
+            Console.WriteLine(reciverTerminal.ConnectToExchange());
 
-            var user1 = terminals[0];
-            var user2 = terminals[1];
+            var callStatus = senderTerminal.MakeCall(reciverTerminal.PhoneNumber);
+            var disconnectStatus = reciverTerminal.CloseCall();
 
-            if (user1.ConnectToExchange())
-            {
-                var status = user1.MakeCall(user2.PhoneNumber);
-                Console.WriteLine(status);
-            }
+            Console.WriteLine(senderTerminal.DisconnectFromExchange());
+            Console.WriteLine(reciverTerminal.DisconnectFromExchange());
         }
     }
 }

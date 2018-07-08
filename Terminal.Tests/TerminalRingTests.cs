@@ -11,7 +11,8 @@ namespace ATS.Tests
     [TestFixture]
     public class TerminalRingTests
     {
-        private ITerminal _terminal;
+        private ITerminal _senderTerminal;
+        private ITerminal _reciverTerminal;
         private IList<Phone> _phones;
 
         [SetUp]
@@ -25,28 +26,30 @@ namespace ATS.Tests
 
             var exchange = new TelephoneExchange(new HashSet<IPort>(ports), new HashSet<Phone>(_phones), null);
 
-            _terminal = new Terminal(_phones[0], exchange);
+            _senderTerminal = new Terminal(_phones[0], exchange);
+            _reciverTerminal = new Terminal(_phones[1], exchange);
         }
 
         [Test]
         public void SuccessfulCall()
         {
-            Assert.That(_terminal.ConnectToExchange() == true);
+            Assert.That(_senderTerminal.ConnectToExchange() == true);
+            Assert.That(_reciverTerminal.ConnectToExchange() == true);
+            
+            Assert.That(_senderTerminal.MakeCall(_reciverTerminal.PhoneNumber) == CallState.Connected);
+            Assert.That(_reciverTerminal.CloseCall() == CallState.Disconnected);
 
-            var reciverPhone = _phones[1];
-            Assert.That(_terminal.MakeCall(reciverPhone) == CallState.Connected);
-            Assert.That(_terminal.CloseCall() == CallState.Disconnected);
-
-            Assert.That(_terminal.DisconnectFromExchange() == true);
+            Assert.That(_senderTerminal.DisconnectFromExchange() == true);
+            Assert.That(_reciverTerminal.DisconnectFromExchange() == true);
         }
 
         [Test]
         public void NonexistentPhoneCall()
         {
-            _terminal.ConnectToExchange();
+            _senderTerminal.ConnectToExchange();
 
             var nonexistentPhone = new Phone(000);
-            Assert.That(_terminal.MakeCall(nonexistentPhone) == CallState.Error);
+            Assert.That(_senderTerminal.MakeCall(nonexistentPhone) == CallState.Error);
         }
     }
 }

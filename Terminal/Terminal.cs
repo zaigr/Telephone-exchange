@@ -12,7 +12,7 @@ namespace ATS
         public Phone PhoneNumber { get; private set; }
 
         private ITelephoneExchange _telephoneExchange;
-        private Phone _currentCallReciver;
+        private Phone _currentCollocutor;
 
 
         public Terminal(Phone phoneNumber, ITelephoneExchange exchange)
@@ -24,34 +24,53 @@ namespace ATS
         public CallState MakeCall(Phone reciverNumber)
         {
             var status = _telephoneExchange.ConnectAbonents(PhoneNumber, reciverNumber);
-
-            if (status == CallState.Connected) {
-                _currentCallReciver = reciverNumber;
-            }
-            
             return status;
         }
+
 
         public CallState CloseCall()
         {
-            var status = _telephoneExchange.DisconnectAbonents(PhoneNumber, _currentCallReciver);
-
-            if (status == CallState.Disconnected) {
-                _currentCallReciver = null;
-            }
-
+            var status = _telephoneExchange.DisconnectAbonents(PhoneNumber, _currentCollocutor);
             return status;
         }
 
+
         public bool ConnectToExchange()
         {
+            _telephoneExchange.AbonentsConnected += ExchangeCallStartEventHandler;
+            _telephoneExchange.AbonentsDisconnected += ExchangeCallEndEventHandler;
+            
             return _telephoneExchange.ConnectToExchange(PhoneNumber);
         }
 
+        private void ExchangeCallStartEventHandler(object sender, RingEventArgs e)
+        {
+            if (PhoneNumber == e.Sender)
+            {
+                _currentCollocutor = e.Reciver;
+            }
+
+            if (PhoneNumber == e.Reciver) {
+                _currentCollocutor = e.Sender;
+            }
+        }
+
+        private void ExchangeCallEndEventHandler(object sender, RingEventArgs e)
+        {
+            if (PhoneNumber == e.Sender || PhoneNumber == e.Reciver) {
+                _currentCollocutor = null;
+            }
+        }
+
+
         public bool DisconnectFromExchange()
         {
+            _telephoneExchange.AbonentsConnected -= ExchangeCallStartEventHandler;
+            _telephoneExchange.AbonentsDisconnected -= ExchangeCallEndEventHandler;
+
             return _telephoneExchange.DisconnectFromExchange(PhoneNumber);
         }
+
 
         public string RunUSSD(string request)
         {
