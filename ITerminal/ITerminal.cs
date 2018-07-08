@@ -16,7 +16,6 @@ namespace ATS.Interfaces
         bool ConnectToExchange();
         bool DisconnectFromExchange();
 
-        // ITariffPlan TariffPlan { get; }
-        // void Report();
+        string RunUSSD(string request);
     }
 }

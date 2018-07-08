@@ -12,7 +12,7 @@ namespace ATS
         public Phone PhoneNumber { get; private set; }
 
         private ITelephoneExchange _telephoneExchange;
-        private Phone _currentReciver;
+        private Phone _currentCallReciver;
 
 
         public Terminal(Phone phoneNumber, ITelephoneExchange exchange)
@@ -25,12 +25,22 @@ namespace ATS
         {
             var status = _telephoneExchange.ConnectAbonents(PhoneNumber, reciverNumber);
 
+            if (status == CallState.Connected) {
+                _currentCallReciver = reciverNumber;
+            }
+            
             return status;
         }
 
         public CallState CloseCall()
         {
-            return _telephoneExchange.DisconnectAbonents(PhoneNumber, _currentReciver);
+            var status = _telephoneExchange.DisconnectAbonents(PhoneNumber, _currentCallReciver);
+
+            if (status == CallState.Disconnected) {
+                _currentCallReciver = null;
+            }
+
+            return status;
         }
 
         public bool ConnectToExchange()
@@ -41,6 +51,11 @@ namespace ATS
         public bool DisconnectFromExchange()
         {
             return _telephoneExchange.DisconnectFromExchange(PhoneNumber);
+        }
+
+        public string RunUSSD(string request)
+        {
+            throw new NotImplementedException();
         }
     }
 }
