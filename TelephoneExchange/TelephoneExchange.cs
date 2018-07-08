@@ -54,10 +54,11 @@ namespace ATS
 
         public bool AvalibleForServe(Phone sender, Phone reciver)
         {
+            var selfConnection = sender == reciver;
             var phonesAvalible = _avaliblePhones.Contains(sender) && _avaliblePhones.Contains(reciver);
             var connectedToPorts = _mappedPorts.ContainsKey(sender) && _mappedPorts.ContainsKey(reciver);
-
-            if (phonesAvalible && connectedToPorts) {
+            
+            if (phonesAvalible && connectedToPorts && !selfConnection) {
                 return true;
             }
             else {
@@ -75,6 +76,10 @@ namespace ATS
                 return CallState.Locked;
             }
 
+            if (!CheckRingAvalible(reciver)) {
+                return CallState.Engaget;
+            }
+
             var callState = EstablishConnection(sender, reciver);
             if (callState == CallState.Connected) {
                 OnAbonentsConnected(new RingEventArgs(sender, reciver));
@@ -88,7 +93,7 @@ namespace ATS
             var reciverPort = _mappedPorts[reciver];
             var senderPort = _mappedPorts[sender];
 
-            if (reciverPort.State == PortState.Listened) {
+            if (senderPort.State == PortState.Listened && reciverPort.State == PortState.Listened) {
                 reciverPort.State = PortState.Connected;
                 senderPort.State = PortState.Connected;
 
@@ -131,16 +136,19 @@ namespace ATS
                 return false;
             }
 
-            TryMapPort(abonent, out bool isMapped);
-
-            return isMapped;
+            if (!_mappedPorts.ContainsKey(abonent)) {
+                var isMapped = MapToPort(abonent);
+                return isMapped;
+            } 
+            else {
+                return true;
+            }
         }
 
-        private void TryMapPort(Phone phone, out bool isMapped)
+        private bool MapToPort(Phone phone)
         {
             if (_freePorts.Count == 0) {
-                isMapped = false;
-                return;
+                return false;
             }
 
             var avaliblePort = _freePorts.First();
@@ -149,7 +157,7 @@ namespace ATS
             avaliblePort.State = PortState.Listened;
             _mappedPorts.Add(phone, avaliblePort);
             
-            isMapped = true;
+            return true;
         }
 
         public bool DisconnectFromExchange(Phone phone)
