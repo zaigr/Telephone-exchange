@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATS.Billing.Interfaces
+namespace ATS.Billing.Data.Interfaces
 {
     public interface IRepository<TEntity> where TEntity: class
     {
