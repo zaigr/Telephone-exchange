@@ -40,11 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Phone.cs" />
     <Compile Include="Common\CallState.cs" />
     <Compile Include="EventArgs\RingEventArgs.cs" />
     <Compile Include="ITelephoneExchange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Phone\Phone.csproj">
+      <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
+      <Name>Phone</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

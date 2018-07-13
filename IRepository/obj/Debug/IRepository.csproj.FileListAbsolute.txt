@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\ATS\IRepository\bin\Debug\IRepository.dll
+C:\Users\user\Desktop\ATS\IRepository\bin\Debug\IRepository.pdb
+C:\Users\user\Desktop\ATS\IRepository\obj\Debug\IRepository.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\ATS\IRepository\obj\Debug\IRepository.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ATS\IRepository\obj\Debug\IRepository.dll
+C:\Users\user\Desktop\ATS\IRepository\obj\Debug\IRepository.pdb

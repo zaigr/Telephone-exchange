@@ -1,0 +1,11 @@
+C:\Users\user\Desktop\ATS\PhoneRepository\obj\Debug\PhoneRepository.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\ATS\PhoneRepository\obj\Debug\PhoneRepository.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ATS\PhoneRepository\bin\Debug\PhoneRepository.dll
+C:\Users\user\Desktop\ATS\PhoneRepository\bin\Debug\PhoneRepository.pdb
+C:\Users\user\Desktop\ATS\PhoneRepository\bin\Debug\IRepository.dll
+C:\Users\user\Desktop\ATS\PhoneRepository\bin\Debug\IRepository.pdb
+C:\Users\user\Desktop\ATS\PhoneRepository\obj\Debug\PhoneRepository.csproj.CopyComplete
+C:\Users\user\Desktop\ATS\PhoneRepository\obj\Debug\PhoneRepository.dll
+C:\Users\user\Desktop\ATS\PhoneRepository\obj\Debug\PhoneRepository.pdb
+C:\Users\user\Desktop\ATS\PhoneRepository\bin\Debug\Phone.dll
+C:\Users\user\Desktop\ATS\PhoneRepository\bin\Debug\Phone.pdb

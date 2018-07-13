@@ -61,6 +61,10 @@
       <Project>{87286abf-b998-47cf-ab72-4aa652016012}</Project>
       <Name>ITerminal</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Phone\Phone.csproj">
+      <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
+      <Name>Phone</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Port\Port.csproj">
       <Project>{0ecd59c8-7680-4032-85cc-c8232e9ebb28}</Project>
       <Name>Port</Name>
