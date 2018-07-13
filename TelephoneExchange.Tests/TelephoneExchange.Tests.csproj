@@ -52,9 +52,14 @@
     <Compile Include="RingsTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mocks\ExchangeBilling.Mock.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IExchangeBilling\IExchangeBilling.csproj">
+      <Project>{761b6eba-2bf4-437a-a718-3608519222dd}</Project>
+      <Name>IExchangeBilling</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IPort\IPort.csproj">
       <Project>{7c1d624a-f52e-47c3-ba45-db1d794bfabc}</Project>
       <Name>IPort</Name>

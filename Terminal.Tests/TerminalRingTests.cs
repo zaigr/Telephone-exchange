@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using ATS.Interfaces;
+using ATS.Billing.Interfaces;
 
-namespace ATS.Tests
+namespace ATS.Tests.Terminal
 {
     [TestFixture]
     public class TerminalRingTests
@@ -24,10 +25,12 @@ namespace ATS.Tests
             var portNumbers = new List<int>() { 10, 20 };
             var ports = portNumbers.Select(numb => new Port(numb));
 
-            var exchange = new TelephoneExchange(new HashSet<IPort>(ports), new HashSet<Phone>(_phones), null);
+            var exchangeBilling = new Mocks.ExchangeBillingMock(p => true);
 
-            _senderTerminal = new Terminal(_phones[0], exchange);
-            _reciverTerminal = new Terminal(_phones[1], exchange);
+            var exchange = new TelephoneExchange(new HashSet<IPort>(ports), new HashSet<Phone>(_phones), exchangeBilling);
+
+            _senderTerminal = new ATS.Terminal(_phones[0], exchange);
+            _reciverTerminal = new ATS.Terminal(_phones[1], exchange);
         }
 
         [Test]

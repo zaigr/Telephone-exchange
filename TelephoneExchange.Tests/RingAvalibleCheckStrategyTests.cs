@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using ATS.Interfaces;
+using ATS.Billing.Interfaces;
 
-namespace ATS.Tests
+
+namespace ATS.Tests.TelephoneExchange
 {
     [TestFixture]
     public class RingAvalibleCheckStrategyTests
@@ -24,9 +26,9 @@ namespace ATS.Tests
             var ports = portNumbers.Select(numb => new Port(numb));
 
             Func<Phone, bool> blockOddNumbersStrategy = (Phone p) => int.Parse($"{p}") % 2 == 0;
+            var exchangeBilling = new Mocks.ExchangeBillingMock(blockOddNumbersStrategy);
 
-            _exchange = new TelephoneExchange(new HashSet<IPort>(ports), new HashSet<Phone>(_phones),
-                                                blockOddNumbersStrategy);
+            _exchange = new ATS.TelephoneExchange(new HashSet<IPort>(ports), new HashSet<Phone>(_phones), exchangeBilling);
         }
 
         [Test]

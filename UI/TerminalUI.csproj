@@ -49,9 +49,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BillingUnitofWork\BillingUnitofWork.csproj">
+      <Project>{b6ccb2f7-efc7-4b99-abba-edd2c7f68724}</Project>
+      <Name>BillingUnitofWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExchangeBilling\ExchangeBilling.csproj">
+      <Project>{0b907c62-8301-4b76-b776-ea9253c8de17}</Project>
+      <Name>ExchangeBilling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IExchangeBilling\IExchangeBilling.csproj">
+      <Project>{761b6eba-2bf4-437a-a718-3608519222dd}</Project>
+      <Name>IExchangeBilling</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IPort\IPort.csproj">
       <Project>{7c1d624a-f52e-47c3-ba45-db1d794bfabc}</Project>
       <Name>IPort</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IRepository\IRepository.csproj">
+      <Project>{844d7cd1-071f-4012-9d98-38e8ded2e481}</Project>
+      <Name>IRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\ITelephoneExchange\ITelephoneExchange.csproj">
       <Project>{c062d7f2-f98b-4c49-90cb-7f092500add7}</Project>
@@ -60,6 +76,10 @@
     <ProjectReference Include="..\ITerminal\ITerminal.csproj">
       <Project>{87286abf-b998-47cf-ab72-4aa652016012}</Project>
       <Name>ITerminal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhoneRepository\PhoneRepository.csproj">
+      <Project>{5bb77a46-4826-41d3-884b-d95517f685d2}</Project>
+      <Name>PhoneRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
