@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneRepository", "PhoneRep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone", "Phone\Phone.csproj", "{921C7C13-BB47-4132-A7F1-737F2ED83881}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeBilling", "ExchangeBilling\ExchangeBilling.csproj", "{0B907C62-8301-4B76-B776-EA9253C8DE17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{921C7C13-BB47-4132-A7F1-737F2ED83881}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{921C7C13-BB47-4132-A7F1-737F2ED83881}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{921C7C13-BB47-4132-A7F1-737F2ED83881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B907C62-8301-4B76-B776-EA9253C8DE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B907C62-8301-4B76-B776-EA9253C8DE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B907C62-8301-4B76-B776-EA9253C8DE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B907C62-8301-4B76-B776-EA9253C8DE17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

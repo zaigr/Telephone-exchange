@@ -10,7 +10,7 @@ namespace ATS.Billing
 {
     public class BillingUnitOfWork
     {
-        IRepository<Phone> Phones;
+        IRepository<Phone> Phones { get; }
         //IRepository<Tariff> Tariffs;
         //IRepository<Client> Clients;
 

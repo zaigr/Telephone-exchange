@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ATS.Interfaces;
+using ATS.Billing.Interfaces;
+
 
 namespace ATS
 {
@@ -20,15 +22,15 @@ namespace ATS
 
         public event EventHandler<PortsConnectedEventArgs> PortsConnected; 
 
-        public TelephoneExchange(ISet<IPort> ports, ISet<Phone> phones, Func<Phone, bool> checkRingAvalibleStrategy)
+        public TelephoneExchange(ISet<IPort> ports, ISet<Phone> phones, IExchangeBilling exchangeBilling)
         {
             this._freePorts = ports;
             this._avaliblePhones = phones;
- 
-            this.CheckRingAvalible = checkRingAvalibleStrategy != null ?
-                checkRingAvalibleStrategy : (Phone p) => { return true; };
-
             _mappedPorts = new Dictionary<Phone, IPort>();
+
+            this.CheckRingAvalible = exchangeBilling.AbonentIsAvalible;
+            this.AbonentsConnected += exchangeBilling.AbonentsConnectedEventHandler;
+            this.AbonentsDisconnected += exchangeBilling.AbonentsDisconnectedEventHandler;
         }
 
         protected void OnAbonentsConnected(RingEventArgs e)

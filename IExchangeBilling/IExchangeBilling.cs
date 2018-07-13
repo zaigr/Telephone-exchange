@@ -10,10 +10,8 @@ namespace ATS.Billing.Interfaces
     public interface IExchangeBilling
     {
         void AbonentsConnectedEventHandler(object sender, RingEventArgs e);
-        void AbonentsDiconnectedEventHandler(object sender, RingEventArgs e);
+        void AbonentsDisconnectedEventHandler(object sender, RingEventArgs e);
 
         bool AbonentIsAvalible(Phone abonent);
-
-        decimal GetAbonentBalance(Phone abonent);
     }
 }
