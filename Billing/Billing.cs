@@ -14,12 +14,15 @@ namespace ATS.Billing.Data
         public DateTimeOffset Date { get; }
         public TimeSpan Duration { get; set; }
         public decimal Cost { get; set; }
+        public bool Checked { get; set; }
 
         public Billing(Client fromClient, Client toClient, DateTimeOffset date)
         {
             FromClient = fromClient;
             ToClient = toClient;
             Date = date;
+
+            Checked = false;
         }
 
         public Billing(Client fromClient, Client toClient, DateTimeOffset date, TimeSpan duration, decimal cost)

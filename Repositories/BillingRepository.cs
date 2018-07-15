@@ -24,7 +24,7 @@ namespace ATS.Billing.Data
 
         public IEnumerable<Billing> GetAllEntities()
         {
-            return _billingSet.ToList();
+            return _billingSet;
         }
 
         public IEnumerable<Billing> GetEntities(Func<Billing, bool> selector)

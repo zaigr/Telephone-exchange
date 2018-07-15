@@ -28,7 +28,7 @@ namespace ATS.Billing.Data
 
         public IEnumerable<IndividualClient> GetAllEntities()
         {
-            return _clientSet.ToList();
+            return _clientSet;
         }
 
         public IndividualClient GetEntityOrDefault(Func<IndividualClient, bool> selector)

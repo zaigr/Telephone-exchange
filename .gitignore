@@ -62,3 +62,15 @@ Client/obj
 
 IndividualClient/bin
 IndividualClient/obj
+
+Billing/bin
+Billing/obj
+
+BalanceCheck/bin
+BalanceCheck/obj
+
+ExchangeBilling.Tests/bin
+ExchangeBilling.Tests/obj
+
+IBalanceCheck/bin
+IBalanceCheck/obj

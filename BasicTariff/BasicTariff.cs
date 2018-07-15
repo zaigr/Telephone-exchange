@@ -11,7 +11,14 @@ namespace ATS.Billing
 {
     public class BasicTariff : ITariff
     {
-        public int Id { get; set; }
+        public BasicTariff(int id, decimal costPerMinute, string name)
+        {
+            Id = id;
+            CostPerMinute = costPerMinute;
+            Name = name;
+        }
+
+        public int Id { get; }
         public decimal CostPerMinute { get; set; }
         public string Name { get; set; }
 

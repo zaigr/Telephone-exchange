@@ -10,6 +10,15 @@ namespace ATS.Billing.Data
 {
     public class BillingUnitOfWork
     {
+        public BillingUnitOfWork(IRepository<Phone> phones, IRepository<BasicTariff> tariffs, IRepository<IndividualClient> individualClients, IRepository<Client> clients, IRepository<Billing> billing)
+        {
+            Phones = phones;
+            Tariffs = tariffs;
+            IndividualClients = individualClients;
+            Clients = clients;
+            Billing = billing;
+        }
+
         public IRepository<Phone> Phones { get; }
         public IRepository<BasicTariff> Tariffs { get; }
         public IRepository<IndividualClient> IndividualClients { get; }
@@ -18,6 +27,6 @@ namespace ATS.Billing.Data
         //IRepository<Actions> Actions;
         //IRepository<ClientActions> ClientActions;
 
-        public IRepository<Billing> Billing { get; set; }
+        public IRepository<Billing> Billing { get; }
     }
 }

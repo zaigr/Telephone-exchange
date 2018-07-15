@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0B907C62-8301-4B76-B776-EA9253C8DE17}</ProjectGuid>
+    <ProjectGuid>{9B8DDDC4-0221-4693-9CB6-8A832188C44C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExchangeBilling</RootNamespace>
-    <AssemblyName>ExchangeBilling</AssemblyName>
+    <RootNamespace>BalanceCheck</RootNamespace>
+    <AssemblyName>BalanceCheck</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,21 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExchangeBilling.cs" />
+    <Compile Include="BalanceCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BalanceCheck\BalanceCheck.csproj">
-      <Project>{9b8dddc4-0221-4693-9cb6-8a832188c44c}</Project>
-      <Name>BalanceCheck</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BasicTariff\BasicTariff.csproj">
       <Project>{d98a98a0-3ec0-495e-8962-a93c1c22b79f}</Project>
       <Name>BasicTariff</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BillingUnitofWork\BillingUnitofWork.csproj">
-      <Project>{b6ccb2f7-efc7-4b99-abba-edd2c7f68724}</Project>
-      <Name>BillingUnitofWork</Name>
     </ProjectReference>
     <ProjectReference Include="..\Billing\Billing.csproj">
       <Project>{bf8876b7-b32e-4d3c-a292-1bfcafae8698}</Project>
@@ -69,10 +60,6 @@
       <Project>{3b20b78a-de85-426b-9d20-884f6acba6eb}</Project>
       <Name>IBalanceCheck</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IExchangeBilling\IExchangeBilling.csproj">
-      <Project>{761b6eba-2bf4-437a-a718-3608519222dd}</Project>
-      <Name>IExchangeBilling</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IndividualClient\IndividualClient.csproj">
       <Project>{c5784a52-3dbe-4cea-9e6f-de5af770087f}</Project>
       <Name>IndividualClient</Name>
@@ -85,17 +72,9 @@
       <Project>{d2fa4e81-e3cc-4904-a08d-f3797bc61292}</Project>
       <Name>ITariff</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ITelephoneExchange\ITelephoneExchange.csproj">
-      <Project>{c062d7f2-f98b-4c49-90cb-7f092500add7}</Project>
-      <Name>ITelephoneExchange</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
       <Name>Phone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Repositories\Repositories.csproj">
-      <Project>{1dd4185d-40c1-440c-aab3-59459c7fab38}</Project>
-      <Name>Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

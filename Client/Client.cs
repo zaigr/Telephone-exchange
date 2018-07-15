@@ -13,13 +13,15 @@ namespace ATS.Billing.Data
         public int Id { get; set; }
         public ITariff Tariff { get; set; }
         public Phone Phone { get; set; }
+        public decimal Balance { get; set; }
         public ClientStatus Status { get; set; }
 
-        public Client(int id, ITariff tariff, Phone phone, ClientStatus status)
+        public Client(int id, ITariff tariff, Phone phone, decimal balance, ClientStatus status)
         {
             Id = id;
             Tariff = tariff;
             Phone = phone;
+            Balance = balance;
             Status = status;
         }
     }

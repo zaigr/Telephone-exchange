@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Timers;
 using System.Threading.Tasks;
 using ATS.Interfaces;
 using ATS.Billing.Interfaces;
@@ -12,16 +13,20 @@ namespace ATS.Billing
     public class ExchangeBilling : IExchangeBilling
     {
         private BillingUnitOfWork _data;
-
+        private IBalanceCheck _balanceCheck;
+ 
         public TimeSpan CallReceivingDelay { get; private set; }
         private IDictionary<(Phone sender, Phone reciver), Data.Billing> _currentRings;
         
-        public ExchangeBilling(BillingUnitOfWork data, TimeSpan callReceivingDelay)
+        public ExchangeBilling(BillingUnitOfWork data, TimeSpan callReceivingDelay, uint balanceCheckDayNumb = 1, double balanceCountIntervalSeconds = 30)
         {
             this._data = data;
             this.CallReceivingDelay = callReceivingDelay;
+            
+            this._balanceCheck = new BalanceCheck(_data.Clients, _data.Billing ,TimeSpan.FromSeconds(balanceCountIntervalSeconds));
+            _balanceCheck.SetControlDay(balanceCheckDayNumb);
 
-            this._currentRings = new Dictionary<(Phone sender, Phone reciver), Data.Billing>();
+            this._currentRings = new Dictionary<(Phone sender, Phone reciver), Data.Billing>();     
         }
 
         public bool AbonentIsAvalible(Phone abonent)
