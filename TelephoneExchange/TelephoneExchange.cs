@@ -56,6 +56,10 @@ namespace ATS
 
         public bool AvalibleForServe(Phone sender, Phone reciver)
         {
+            if (sender == null || reciver == null) {
+                return false;
+            }
+            
             var selfConnection = sender == reciver;
             var phonesAvalible = _avaliblePhones.Contains(sender) && _avaliblePhones.Contains(reciver);
             var connectedToPorts = _mappedPorts.ContainsKey(sender) && _mappedPorts.ContainsKey(reciver);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using ATS.Interfaces;
@@ -12,6 +13,7 @@ namespace ATS.Tests.Terminal
     [TestFixture]
     public class TerminalRingTests
     {
+        private TimeSpan _callReceivingDelay;
         private ITerminal _senderTerminal;
         private ITerminal _reciverTerminal;
         private IList<Phone> _phones;
@@ -29,8 +31,9 @@ namespace ATS.Tests.Terminal
 
             var exchange = new TelephoneExchange(new HashSet<IPort>(ports), new HashSet<Phone>(_phones), exchangeBilling);
 
-            _senderTerminal = new ATS.Terminal(_phones[0], exchange);
-            _reciverTerminal = new ATS.Terminal(_phones[1], exchange);
+            _callReceivingDelay = TimeSpan.FromMilliseconds(10000);
+            _senderTerminal = new ATS.Terminal(_phones[0], exchange, _callReceivingDelay);
+            _reciverTerminal = new ATS.Terminal(_phones[1], exchange, _callReceivingDelay);
         }
 
         [Test]
@@ -40,10 +43,26 @@ namespace ATS.Tests.Terminal
             Assert.That(_reciverTerminal.ConnectToExchange() == true);
             
             Assert.That(_senderTerminal.MakeCall(_reciverTerminal.PhoneNumber) == CallState.Connected);
+
+            Assert.That(_reciverTerminal.ReceiveCall() == CallState.Connected);
+
+            Task.Delay(1000).Wait();
             Assert.That(_reciverTerminal.CloseCall() == CallState.Disconnected);
 
             Assert.That(_senderTerminal.DisconnectFromExchange() == true);
             Assert.That(_reciverTerminal.DisconnectFromExchange() == true);
+        }
+
+        [Test]
+        public void CallNotReceived()
+        {
+            Assert.That(_senderTerminal.ConnectToExchange() == true);
+            Assert.That(_reciverTerminal.ConnectToExchange() == true);
+
+            Assert.That(_senderTerminal.MakeCall(_reciverTerminal.PhoneNumber) == CallState.Connected);
+
+            Task.Delay((int)_callReceivingDelay.TotalMilliseconds + 1000).Wait();
+            Assert.That(_reciverTerminal.ReceiveCall() == CallState.Disconnected);
         }
 
         [Test]

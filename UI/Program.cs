@@ -19,8 +19,9 @@ namespace ATS.UI
 
             var exchange = new TelephoneExchange(new HashSet<IPort>(ports), new HashSet<Phone>(phones), null);
 
-            var senderTerminal = new Terminal(phones[0], exchange);
-            var reciverTerminal = new Terminal(phones[1], exchange);
+            var callReceiveDelay = TimeSpan.FromMilliseconds(5000);
+            var senderTerminal = new Terminal(phones[0], exchange, callReceiveDelay);
+            var reciverTerminal = new Terminal(phones[1], exchange, callReceiveDelay);
 
             Console.WriteLine(senderTerminal.ConnectToExchange());
             Console.WriteLine(reciverTerminal.ConnectToExchange());

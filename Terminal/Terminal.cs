@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using ATS.Interfaces;
 
 namespace ATS
@@ -14,11 +15,16 @@ namespace ATS
         private ITelephoneExchange _telephoneExchange;
         private Phone _currentCollocutor;
 
+        private readonly int _callReceivingDelayMs;  // milliseconds
+        private CancellationTokenSource _callReceivingDelayCancellator;
 
-        public Terminal(Phone phoneNumber, ITelephoneExchange exchange)
+        public Terminal(Phone phoneNumber, ITelephoneExchange exchange, TimeSpan callReceivingDelay)
         {
             this.PhoneNumber = phoneNumber;
             this._telephoneExchange = exchange;
+            this._callReceivingDelayMs = (int)callReceivingDelay.TotalMilliseconds;
+
+            this._callReceivingDelayCancellator = new CancellationTokenSource(); 
         }
 
         public CallState MakeCall(Phone reciverNumber)
@@ -27,6 +33,15 @@ namespace ATS
             return status;
         }
 
+        public CallState ReceiveCall()
+        {
+            if (_currentCollocutor == null) {
+                return CallState.Disconnected;
+            }
+
+            _callReceivingDelayCancellator.Cancel();
+            return CallState.Connected;
+        }
 
         public CallState CloseCall()
         {
@@ -43,15 +58,25 @@ namespace ATS
             return _telephoneExchange.ConnectToExchange(PhoneNumber);
         }
 
-        private void ExchangeCallStartEventHandler(object sender, RingEventArgs e)
+        private async void ExchangeCallStartEventHandler(object sender, RingEventArgs e)
         {
-            if (PhoneNumber == e.Sender)
-            {
+            if (PhoneNumber == e.Sender) {
                 _currentCollocutor = e.Reciver;
             }
 
             if (PhoneNumber == e.Reciver) {
                 _currentCollocutor = e.Sender;
+
+                //var awaiter = Task.Delay(_callReceivingDelayMs, _callReceivingDelayCancellator.Token).GetAwaiter();
+                //awaiter.OnCompleted(() => this.CloseCall());
+
+                await Task.Delay(_callReceivingDelayMs, _callReceivingDelayCancellator.Token)
+                    .ContinueWith((task) =>
+                    {
+                        if (!task.IsCanceled) {
+                            this.CloseCall();  // Disconnect if not received
+                        }
+                    });  
             }
         }
 

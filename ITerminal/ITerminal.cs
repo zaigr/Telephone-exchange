@@ -11,6 +11,7 @@ namespace ATS.Interfaces
         Phone PhoneNumber { get; }
 
         CallState MakeCall(Phone phone);
+        CallState ReceiveCall();
         CallState CloseCall();
 
         bool ConnectToExchange();
