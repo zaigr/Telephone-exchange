@@ -11,9 +11,13 @@ namespace ATS.Billing.Data
     public class IndividualClient : Client
     {
         public string Name { get; set; }
+        public decimal Balance { get; set; }
 
-        public IndividualClient(int id, ITariff tariff, Phone phone, ClientStatus status, string name)
+        public IndividualClient(int id, ITariff tariff, Phone phone, ClientStatus status, string name, decimal balance)
             : base(id, tariff, phone, status)
-        {  }
+        {
+            Name = name;
+            Balance = balance;
+        }
     }
 }

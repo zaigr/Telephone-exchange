@@ -14,6 +14,7 @@ namespace ATS
 
         private ITelephoneExchange _telephoneExchange;
         private Phone _currentCollocutor;
+        private bool? _isReceiver;
 
         private readonly int _callReceivingDelayMs;  // milliseconds
         private CancellationTokenSource _callReceivingDelayCancellator;
@@ -45,8 +46,16 @@ namespace ATS
 
         public CallState CloseCall()
         {
-            var status = _telephoneExchange.DisconnectAbonents(PhoneNumber, _currentCollocutor);
-            return status;
+            // To Exchange the sender and reciver roles are important during disconnection
+            if (this._isReceiver == true) {
+                return _telephoneExchange.DisconnectAbonents(_currentCollocutor, PhoneNumber);
+            }
+            else if (this._isReceiver == false) {
+                return _telephoneExchange.DisconnectAbonents(PhoneNumber, _currentCollocutor);
+            }
+            else {
+                return CallState.Error;
+            }
         }
 
 
@@ -61,10 +70,12 @@ namespace ATS
         private async void ExchangeCallStartEventHandler(object sender, RingEventArgs e)
         {
             if (PhoneNumber == e.Sender) {
+                this._isReceiver = false;
                 _currentCollocutor = e.Reciver;
             }
 
             if (PhoneNumber == e.Reciver) {
+                this._isReceiver = true;
                 _currentCollocutor = e.Sender;
 
                 //var awaiter = Task.Delay(_callReceivingDelayMs, _callReceivingDelayCancellator.Token).GetAwaiter();
@@ -84,6 +95,7 @@ namespace ATS
         {
             if (PhoneNumber == e.Sender || PhoneNumber == e.Reciver) {
                 _currentCollocutor = null;
+                this._isReceiver = false;
             }
         }
 

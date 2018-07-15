@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1DD4185D-40C1-440C-AAB3-59459C7FAB38}</ProjectGuid>
+    <ProjectGuid>{BF8876B7-B32E-4D3C-A292-1BFCAFAE8698}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Repositories</RootNamespace>
-    <AssemblyName>Repositories</AssemblyName>
+    <RootNamespace>Billing</RootNamespace>
+    <AssemblyName>Billing</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,32 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicTariffRepository.cs" />
-    <Compile Include="BillingRepository.cs" />
-    <Compile Include="IndividualClientRepository.cs" />
-    <Compile Include="PhoneRepository.cs" />
+    <Compile Include="Billing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BasicTariff\BasicTariff.csproj">
-      <Project>{d98a98a0-3ec0-495e-8962-a93c1c22b79f}</Project>
-      <Name>BasicTariff</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Billing\Billing.csproj">
-      <Project>{bf8876b7-b32e-4d3c-a292-1bfcafae8698}</Project>
-      <Name>Billing</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Client\Client.csproj">
       <Project>{34fe6d9e-cf1c-486c-8080-0cf3f3feeb0a}</Project>
       <Name>Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IndividualClient\IndividualClient.csproj">
-      <Project>{c5784a52-3dbe-4cea-9e6f-de5af770087f}</Project>
-      <Name>IndividualClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IRepository\IRepository.csproj">
-      <Project>{844d7cd1-071f-4012-9d98-38e8ded2e481}</Project>
-      <Name>IRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\ITariff\ITariff.csproj">
       <Project>{d2fa4e81-e3cc-4904-a08d-f3797bc61292}</Project>

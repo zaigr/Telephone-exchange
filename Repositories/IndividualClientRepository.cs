@@ -21,12 +21,17 @@ namespace ATS.Billing.Data
             _clientSet.Add(entity);
         }
 
+        public IEnumerable<IndividualClient> GetEntities(Func<IndividualClient, bool> selector)
+        {
+            return _clientSet.Where(selector);
+        }
+
         public IEnumerable<IndividualClient> GetAllEntities()
         {
             return _clientSet.ToList();
         }
 
-        public IndividualClient GetEntity(Func<IndividualClient, bool> selector)
+        public IndividualClient GetEntityOrDefault(Func<IndividualClient, bool> selector)
         {
             return _clientSet.FirstOrDefault(selector);
         }

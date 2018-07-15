@@ -21,12 +21,17 @@ namespace ATS.Billing.Data
             _tariffSet.Add(tariff);
         }
 
+        public IEnumerable<BasicTariff> GetEntities(Func<BasicTariff, bool> selector)
+        {
+            return _tariffSet.Where(selector);
+        }
+
         public IEnumerable<BasicTariff> GetAllEntities()
         {
             return _tariffSet.ToList();
         }
 
-        public BasicTariff GetEntity(Func<BasicTariff, bool> selector)
+        public BasicTariff GetEntityOrDefault(Func<BasicTariff, bool> selector)
         {
             return _tariffSet.FirstOrDefault(selector);
         }

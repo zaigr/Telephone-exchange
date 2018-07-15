@@ -8,12 +8,13 @@ namespace ATS.Billing.Data.Interfaces
 {
     public interface IRepository<TEntity> where TEntity: class
     {
-        TEntity GetEntity(Func<TEntity, bool> selector);
+        TEntity GetEntityOrDefault(Func<TEntity, bool> selector);
         void AddEntity(TEntity entity);
 
         bool RemoveEntity(TEntity entity);
         bool RemoveEntity(Func<TEntity, bool> selector);
 
+        IEnumerable<TEntity> GetEntities(Func<TEntity, bool> selector);
         IEnumerable<TEntity> GetAllEntities();
     }
 }

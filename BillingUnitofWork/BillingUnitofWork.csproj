@@ -48,6 +48,10 @@
       <Project>{d98a98a0-3ec0-495e-8962-a93c1c22b79f}</Project>
       <Name>BasicTariff</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Billing\Billing.csproj">
+      <Project>{bf8876b7-b32e-4d3c-a292-1bfcafae8698}</Project>
+      <Name>Billing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Client\Client.csproj">
       <Project>{34fe6d9e-cf1c-486c-8080-0cf3f3feeb0a}</Project>
       <Name>Client</Name>
@@ -59,6 +63,10 @@
     <ProjectReference Include="..\IRepository\IRepository.csproj">
       <Project>{844d7cd1-071f-4012-9d98-38e8ded2e481}</Project>
       <Name>IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITariff\ITariff.csproj">
+      <Project>{d2fa4e81-e3cc-4904-a08d-f3797bc61292}</Project>
+      <Name>ITariff</Name>
     </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>

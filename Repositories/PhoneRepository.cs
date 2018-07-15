@@ -22,12 +22,17 @@ namespace ATS.Billing.Data
             _phonesSet.Add(entity);
         }
 
+        public IEnumerable<Phone> GetEntities(Func<Phone, bool> selector) 
+        {
+            return _phonesSet.Where(selector);
+        }
+
         public IEnumerable<Phone> GetAllEntities()
         {
             return _phonesSet.ToList();
         }
 
-        public Phone GetEntity(Func<Phone, bool> selector)
+        public Phone GetEntityOrDefault(Func<Phone, bool> selector)
         {
             return _phonesSet.FirstOrDefault(selector);
         }

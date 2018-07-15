@@ -10,14 +10,14 @@ namespace ATS.Billing.Data
 {
     public class BillingUnitOfWork
     {
-        IRepository<Phone> Phones { get; }
-        IRepository<BasicTariff> Tariffs { get; }
-        IRepository<IndividualClient> Clients { get; }
+        public IRepository<Phone> Phones { get; }
+        public IRepository<BasicTariff> Tariffs { get; }
+        public IRepository<IndividualClient> IndividualClients { get; }
+        public IRepository<Client> Clients { get; }
 
         //IRepository<Actions> Actions;
         //IRepository<ClientActions> ClientActions;
 
-
-        //IRepository<IBilling> Billing;
+        public IRepository<Billing> Billing { get; set; }
     }
 }
