@@ -97,6 +97,10 @@
       <Project>{d2fa4e81-e3cc-4904-a08d-f3797bc61292}</Project>
       <Name>ITariff</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ITelephoneExchange.EventArgs\ITelephoneExchange.EventArgs.csproj">
+      <Project>{4ddd743c-b03e-408a-8048-9138246afd3a}</Project>
+      <Name>ITelephoneExchange.EventArgs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
       <Name>Phone</Name>
@@ -105,6 +109,9 @@
       <Project>{1dd4185d-40c1-440c-aab3-59459c7fab38}</Project>
       <Name>Repositories</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

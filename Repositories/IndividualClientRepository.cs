@@ -11,6 +11,8 @@ namespace ATS.Billing.Data
     {
         private ISet<IndividualClient> _clientSet;
 
+        public int Count { get => _clientSet.Count; }
+
         public IndividualClientRepository(IEnumerable<IndividualClient> clients)
         {
             this._clientSet = new HashSet<IndividualClient>(clients);

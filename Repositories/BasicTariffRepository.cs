@@ -11,6 +11,8 @@ namespace ATS.Billing.Data
     {
         private ISet<BasicTariff> _tariffSet;
 
+        public int Count { get => _tariffSet.Count; }
+        
         public BasicTariffRepository(IEnumerable<BasicTariff> tariffs)
         {
             this._tariffSet = new HashSet<BasicTariff>(tariffs);

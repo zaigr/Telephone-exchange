@@ -17,7 +17,6 @@ namespace ATS.Billing
 
         private Timer _balanceCountTimer;
         private readonly TimeSpan _balanceCountTimerInterval;
-        private DateTimeOffset _lastBalanceCountTime;
 
         private IRepository<Client> _clients;
         private IRepository<Data.Billing> _billing;

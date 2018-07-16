@@ -7,6 +7,8 @@ IPort/obj
 
 ITelephoneExchange/bin
 ITelephoneExchange/obj
+ITelephoneExchange.EventArgs/bin
+ITelephoneExchange.EventArgs/obj
 
 ITerminal/bin
 ITerminal/obj

@@ -54,6 +54,10 @@
       <Project>{7c1d624a-f52e-47c3-ba45-db1d794bfabc}</Project>
       <Name>IPort</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ITelephoneExchange.EventArgs\ITelephoneExchange.EventArgs.csproj">
+      <Project>{4ddd743c-b03e-408a-8048-9138246afd3a}</Project>
+      <Name>ITelephoneExchange.EventArgs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ITelephoneExchange\ITelephoneExchange.csproj">
       <Project>{c062d7f2-f98b-4c49-90cb-7f092500add7}</Project>
       <Name>ITelephoneExchange</Name>

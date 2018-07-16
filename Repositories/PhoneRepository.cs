@@ -12,6 +12,8 @@ namespace ATS.Billing.Data
     {
         private ISet<Phone> _phonesSet;
 
+        public int Count { get => _phonesSet.Count; }
+
         public PhoneRepository(IEnumerable<Phone> phones)
         {
             _phonesSet = new HashSet<Phone>(phones);

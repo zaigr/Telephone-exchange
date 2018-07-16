@@ -16,5 +16,6 @@ namespace ATS.Billing.Data.Interfaces
 
         IEnumerable<TEntity> GetEntities(Func<TEntity, bool> selector);
         IEnumerable<TEntity> GetAllEntities();
+        int Count { get; }
     }
 }
