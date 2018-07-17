@@ -24,7 +24,7 @@ namespace ATS.Billing.Tests
         public void Init()
         {
             var phones = new List<Phone> { new Phone(111), new Phone(222) };
-            var tariff = new BasicTariff(1, costPerMinute: 1000, name: "1");
+            var tariff = new BasicTariff(1, costPerMinute: 1000, name: "1", favoriteNumber: null);
 
             firstClient = new IndividualClient(1, tariff, phones[0], 0, ClientStatus.Avalible, "111");
             secondClient = new IndividualClient(2, tariff, phones[1], 0, ClientStatus.Avalible, "222");
@@ -36,7 +36,7 @@ namespace ATS.Billing.Tests
 
             this.unitOfWork = new BillingUnitOfWork(
                 new PhoneRepository(phones), 
-                new BasicTariffRepository(new List<BasicTariff> { tariff }),
+                new TariffRepository(new List<BasicTariff> { tariff }),
                 null, 
                 new ClientRepository(clients), 
                 new BillingRepository(new List<Data.Billing>()));

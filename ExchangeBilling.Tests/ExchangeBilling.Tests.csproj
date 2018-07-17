@@ -109,6 +109,10 @@
       <Project>{1dd4185d-40c1-440c-aab3-59459c7fab38}</Project>
       <Name>Repositories</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tariff\Tariff.csproj">
+      <Project>{b92b090c-843e-498e-aab4-54971c607ffb}</Project>
+      <Name>Tariff</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeBilling.Tests", "Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITelephoneExchange.EventArgs", "ITelephoneExchange.EventArgs\ITelephoneExchange.EventArgs.csproj", "{4DDD743C-B03E-408A-8048-9138246AFD3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tariff", "Tariff\Tariff.csproj", "{B92B090C-843E-498E-AAB4-54971C607FFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{4DDD743C-B03E-408A-8048-9138246AFD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DDD743C-B03E-408A-8048-9138246AFD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DDD743C-B03E-408A-8048-9138246AFD3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B92B090C-843E-498E-AAB4-54971C607FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B92B090C-843E-498E-AAB4-54971C607FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B92B090C-843E-498E-AAB4-54971C607FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B92B090C-843E-498E-AAB4-54971C607FFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

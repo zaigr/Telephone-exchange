@@ -9,22 +9,23 @@ using ATS.Billing.Interfaces;
 
 namespace ATS.Billing
 {
-    public class BasicTariff : ITariff
+    public class BasicTariff : Tariff, ITariff
     {
-        public BasicTariff(int id, decimal costPerMinute, string name)
+        public Phone FavoriteNumber { get; set; }
+
+        public BasicTariff(int id, decimal costPerMinute, string name, Phone favoriteNumber)
+            : base(id, costPerMinute, name)
         {
-            Id = id;
-            CostPerMinute = costPerMinute;
-            Name = name;
+            FavoriteNumber = favoriteNumber;
         }
 
-        public int Id { get; }
-        public decimal CostPerMinute { get; set; }
-        public string Name { get; set; }
-
-        public decimal GetCallCost(Phone sender, Phone reciver, TimeSpan durability)
+        public override decimal GetCallCost(Phone sender, Phone reciver, TimeSpan durability)
         {
-            return CostPerMinute * (decimal)durability.TotalMinutes;
+            if (reciver == FavoriteNumber) {
+                return 0;
+            }
+
+            return base.GetCallCost(sender, reciver, durability);
         }
     }
 }
