@@ -11,17 +11,23 @@ namespace ATS.Billing
 {
     public class BasicTariff : Tariff, ITariff
     {
-        public Phone FavoriteNumber { get; set; }
+        public IDictionary<Phone, Phone> _favoritePhonesDict;
 
-        public BasicTariff(int id, decimal costPerMinute, string name, Phone favoriteNumber)
+        public BasicTariff(int id, decimal costPerMinute, string name)
             : base(id, costPerMinute, name)
         {
-            FavoriteNumber = favoriteNumber;
+            _favoritePhonesDict = new Dictionary<Phone, Phone>();
+        }
+
+        public BasicTariff(int id, decimal costPerMinute, string name, IDictionary<Phone, Phone> favoritePhones)
+            : this(id, costPerMinute, name)
+        {
+            this._favoritePhonesDict = favoritePhones;
         }
 
         public override decimal GetCallCost(Phone sender, Phone reciver, TimeSpan durability)
         {
-            if (reciver == FavoriteNumber) {
+            if (_favoritePhonesDict.ContainsKey(sender) && _favoritePhonesDict[sender] == reciver) {
                 return 0;
             }
 
