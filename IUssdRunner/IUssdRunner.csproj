@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3363F700-515F-484A-819B-7D5D19656045}</ProjectGuid>
+    <ProjectGuid>{D7501511-8BFF-4DFC-AE45-49D72CA9AE19}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Terminal</RootNamespace>
-    <AssemblyName>Terminal</AssemblyName>
+    <RootNamespace>IUssdRunner</RootNamespace>
+    <AssemblyName>IUssdRunner</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,34 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Terminal.cs" />
+    <Compile Include="IUssdRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ITelephoneExchange.EventArgs\ITelephoneExchange.EventArgs.csproj">
-      <Project>{4ddd743c-b03e-408a-8048-9138246afd3a}</Project>
-      <Name>ITelephoneExchange.EventArgs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ITelephoneExchange\ITelephoneExchange.csproj">
-      <Project>{c062d7f2-f98b-4c49-90cb-7f092500add7}</Project>
-      <Name>ITelephoneExchange</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ITerminal\ITerminal.csproj">
-      <Project>{87286abf-b998-47cf-ab72-4aa652016012}</Project>
-      <Name>ITerminal</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IUssdRunner\IUssdRunner.csproj">
-      <Project>{d7501511-8bff-4dfc-ae45-49d72ca9ae19}</Project>
-      <Name>IUssdRunner</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Phone\Phone.csproj">
-      <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
-      <Name>Phone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UssdRunner\UssdRunner.csproj">
-      <Project>{9b909962-181b-4115-b5d9-8acc16888ce9}</Project>
-      <Name>UssdRunner</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

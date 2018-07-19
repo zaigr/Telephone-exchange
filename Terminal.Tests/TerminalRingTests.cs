@@ -32,8 +32,8 @@ namespace ATS.Tests.Terminal
             var exchange = new TelephoneExchange(new HashSet<IPort>(ports), new HashSet<Phone>(_phones), exchangeBilling);
 
             _callReceivingDelay = TimeSpan.FromMilliseconds(10000);
-            _senderTerminal = new ATS.Terminal(_phones[0], exchange, _callReceivingDelay);
-            _reciverTerminal = new ATS.Terminal(_phones[1], exchange, _callReceivingDelay);
+            _senderTerminal = new ATS.Terminal(_phones[0], exchange, null, _callReceivingDelay);
+            _reciverTerminal = new ATS.Terminal(_phones[1], exchange, null, _callReceivingDelay);
         }
 
         [Test]

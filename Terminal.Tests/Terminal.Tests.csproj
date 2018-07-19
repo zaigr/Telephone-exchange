@@ -74,6 +74,10 @@
       <Project>{87286abf-b998-47cf-ab72-4aa652016012}</Project>
       <Name>ITerminal</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IUssdRunner\IUssdRunner.csproj">
+      <Project>{d7501511-8bff-4dfc-ae45-49d72ca9ae19}</Project>
+      <Name>IUssdRunner</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
       <Name>Phone</Name>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Text;
 using ATS.Interfaces;
+using ATS.Billing.Interfaces;
 
 namespace ATS
 {
@@ -13,16 +14,18 @@ namespace ATS
         public Phone PhoneNumber { get; private set; }
 
         private ITelephoneExchange _telephoneExchange;
+        private IUssdRunner _ussdRunner;
         private Phone _currentCollocutor;
         private bool? _isReceiver;
 
         private readonly int _callReceivingDelayMs;  // milliseconds
         private CancellationTokenSource _callReceivingDelayCancellator;
 
-        public Terminal(Phone phoneNumber, ITelephoneExchange exchange, TimeSpan callReceivingDelay)
+        public Terminal(Phone phoneNumber, ITelephoneExchange exchange, IUssdRunner ussdRunner, TimeSpan callReceivingDelay)
         {
             this.PhoneNumber = phoneNumber;
             this._telephoneExchange = exchange;
+            this._ussdRunner = ussdRunner;
             this._callReceivingDelayMs = (int)callReceivingDelay.TotalMilliseconds;
 
             this._callReceivingDelayCancellator = new CancellationTokenSource(); 
@@ -111,7 +114,8 @@ namespace ATS
 
         public string RunUSSD(string request)
         {
-            throw new NotImplementedException();
+            var result = _ussdRunner.RunCommand(request);
+            return String.Join(Environment.NewLine, result);
         }
     }
 }
