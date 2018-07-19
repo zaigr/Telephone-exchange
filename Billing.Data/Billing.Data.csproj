@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2BBBC9EF-589E-4176-B89B-73CE8DB8A37E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>UI</RootNamespace>
-    <AssemblyName>UI</AssemblyName>
+    <ProjectGuid>{78EFC4D4-53D4-4CE0-9747-1C972107A7E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Billing.Data</RootNamespace>
+    <AssemblyName>Billing.Data</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,20 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="BillingUnitOfWork.cs" />
+    <Compile Include="Classes\Abstract\Client.cs" />
+    <Compile Include="Classes\Billing.cs" />
+    <Compile Include="Classes\Common\ClientStatus.cs" />
+    <Compile Include="Classes\IndividualClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="Repositories\BillingRepository.cs" />
+    <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\IndividualClientRepository.cs" />
+    <Compile Include="Repositories\PhoneRepository.cs" />
+    <Compile Include="Repositories\TariffRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Billing.Data.Interfaces\Billing.Data.Interfaces.csproj">
       <Project>{1ed3a24f-3e6f-40d3-9ff5-87f61d7648d0}</Project>
       <Name>Billing.Data.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Billing.Data\Billing.Data.csproj">
-      <Project>{78efc4d4-53d4-4ce0-9747-1c972107a7e1}</Project>
-      <Name>Billing.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Billing.Interfaces\Billing.Interfaces.csproj">
       <Project>{b37be6d5-2114-4df4-8f51-07055dfc3fd5}</Project>
@@ -65,33 +65,9 @@
       <Project>{4466bb96-6a20-4831-91a2-820e2932bc69}</Project>
       <Name>Billing.Tariffication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExchangeBilling.Tests\ExchangeBilling.Tests.csproj">
-      <Project>{28c51b25-068c-41a5-a5b2-b15d54e7853c}</Project>
-      <Name>ExchangeBilling.Tests</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ExchangeBilling\ExchangeBilling.csproj">
-      <Project>{0b907c62-8301-4b76-b776-ea9253c8de17}</Project>
-      <Name>ExchangeBilling</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{7241964f-9a39-4f08-8c37-94c464d7220b}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
       <Name>Phone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TelephoneExchange\TelephoneExchange.csproj">
-      <Project>{ac89b530-601e-4952-818c-e21547165fa2}</Project>
-      <Name>TelephoneExchange</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Terminal\Terminal.csproj">
-      <Project>{3363f700-515f-484a-819b-7d5d19656045}</Project>
-      <Name>Terminal</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UssdRunner\UssdRunner.csproj">
-      <Project>{9b909962-181b-4115-b5d9-8acc16888ce9}</Project>
-      <Name>UssdRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

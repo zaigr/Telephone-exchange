@@ -41,30 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Port.cs" />
     <Compile Include="EventArgs\PortsConnectedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TelephoneExchange.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IExchangeBilling\IExchangeBilling.csproj">
-      <Project>{761b6eba-2bf4-437a-a718-3608519222dd}</Project>
-      <Name>IExchangeBilling</Name>
+    <ProjectReference Include="..\Billing.Interfaces\Billing.Interfaces.csproj">
+      <Project>{b37be6d5-2114-4df4-8f51-07055dfc3fd5}</Project>
+      <Name>Billing.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IPort\IPort.csproj">
-      <Project>{7c1d624a-f52e-47c3-ba45-db1d794bfabc}</Project>
-      <Name>IPort</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ITelephoneExchange.EventArgs\ITelephoneExchange.EventArgs.csproj">
-      <Project>{4ddd743c-b03e-408a-8048-9138246afd3a}</Project>
-      <Name>ITelephoneExchange.EventArgs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ITelephoneExchange\ITelephoneExchange.csproj">
-      <Project>{c062d7f2-f98b-4c49-90cb-7f092500add7}</Project>
-      <Name>ITelephoneExchange</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ITerminal\ITerminal.csproj">
-      <Project>{87286abf-b998-47cf-ab72-4aa652016012}</Project>
-      <Name>ITerminal</Name>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{7241964f-9a39-4f08-8c37-94c464d7220b}</Project>
+      <Name>Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>

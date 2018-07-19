@@ -45,49 +45,21 @@
     <Compile Include="UssdRunner.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BasicTariff\BasicTariff.csproj">
-      <Project>{d98a98a0-3ec0-495e-8962-a93c1c22b79f}</Project>
-      <Name>BasicTariff</Name>
+    <ProjectReference Include="..\Billing.Data.Interfaces\Billing.Data.Interfaces.csproj">
+      <Project>{1ed3a24f-3e6f-40d3-9ff5-87f61d7648d0}</Project>
+      <Name>Billing.Data.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BillingUnitofWork\BillingUnitofWork.csproj">
-      <Project>{b6ccb2f7-efc7-4b99-abba-edd2c7f68724}</Project>
-      <Name>BillingUnitofWork</Name>
+    <ProjectReference Include="..\Billing.Data\Billing.Data.csproj">
+      <Project>{78efc4d4-53d4-4ce0-9747-1c972107a7e1}</Project>
+      <Name>Billing.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Billing\Billing.csproj">
-      <Project>{bf8876b7-b32e-4d3c-a292-1bfcafae8698}</Project>
-      <Name>Billing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Client\Client.csproj">
-      <Project>{34fe6d9e-cf1c-486c-8080-0cf3f3feeb0a}</Project>
-      <Name>Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IndividualClient\IndividualClient.csproj">
-      <Project>{c5784a52-3dbe-4cea-9e6f-de5af770087f}</Project>
-      <Name>IndividualClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IRepository\IRepository.csproj">
-      <Project>{844d7cd1-071f-4012-9d98-38e8ded2e481}</Project>
-      <Name>IRepository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ITariff\ITariff.csproj">
-      <Project>{d2fa4e81-e3cc-4904-a08d-f3797bc61292}</Project>
-      <Name>ITariff</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IUssdRunner\IUssdRunner.csproj">
-      <Project>{d7501511-8bff-4dfc-ae45-49d72ca9ae19}</Project>
-      <Name>IUssdRunner</Name>
+    <ProjectReference Include="..\Billing.Interfaces\Billing.Interfaces.csproj">
+      <Project>{b37be6d5-2114-4df4-8f51-07055dfc3fd5}</Project>
+      <Name>Billing.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
       <Name>Phone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Repositories\Repositories.csproj">
-      <Project>{1dd4185d-40c1-440c-aab3-59459c7fab38}</Project>
-      <Name>Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tariff\Tariff.csproj">
-      <Project>{b92b090c-843e-498e-aab4-54971c607ffb}</Project>
-      <Name>Tariff</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

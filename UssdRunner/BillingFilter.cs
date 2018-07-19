@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using ATS.Interfaces;
 using ATS.Billing.Data;
 using ATS.Billing.Data.Interfaces;
-using ATS.Billing.Interfaces;
 
 namespace ATS.Billing
 {

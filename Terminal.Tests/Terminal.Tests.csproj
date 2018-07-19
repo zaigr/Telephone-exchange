@@ -54,37 +54,33 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IExchangeBilling\IExchangeBilling.csproj">
-      <Project>{761b6eba-2bf4-437a-a718-3608519222dd}</Project>
-      <Name>IExchangeBilling</Name>
+    <ProjectReference Include="..\Billing.Data.Interfaces\Billing.Data.Interfaces.csproj">
+      <Project>{1ed3a24f-3e6f-40d3-9ff5-87f61d7648d0}</Project>
+      <Name>Billing.Data.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IPort\IPort.csproj">
-      <Project>{7c1d624a-f52e-47c3-ba45-db1d794bfabc}</Project>
-      <Name>IPort</Name>
+    <ProjectReference Include="..\Billing.Data\Billing.Data.csproj">
+      <Project>{78efc4d4-53d4-4ce0-9747-1c972107a7e1}</Project>
+      <Name>Billing.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ITelephoneExchange.EventArgs\ITelephoneExchange.EventArgs.csproj">
-      <Project>{4ddd743c-b03e-408a-8048-9138246afd3a}</Project>
-      <Name>ITelephoneExchange.EventArgs</Name>
+    <ProjectReference Include="..\Billing.Interfaces\Billing.Interfaces.csproj">
+      <Project>{b37be6d5-2114-4df4-8f51-07055dfc3fd5}</Project>
+      <Name>Billing.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ITelephoneExchange\ITelephoneExchange.csproj">
-      <Project>{c062d7f2-f98b-4c49-90cb-7f092500add7}</Project>
-      <Name>ITelephoneExchange</Name>
+    <ProjectReference Include="..\Billing.Tariffication\Billing.Tariffication.csproj">
+      <Project>{4466bb96-6a20-4831-91a2-820e2932bc69}</Project>
+      <Name>Billing.Tariffication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ITerminal\ITerminal.csproj">
-      <Project>{87286abf-b998-47cf-ab72-4aa652016012}</Project>
-      <Name>ITerminal</Name>
+    <ProjectReference Include="..\ExchangeBilling\ExchangeBilling.csproj">
+      <Project>{0b907c62-8301-4b76-b776-ea9253c8de17}</Project>
+      <Name>ExchangeBilling</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IUssdRunner\IUssdRunner.csproj">
-      <Project>{d7501511-8bff-4dfc-ae45-49d72ca9ae19}</Project>
-      <Name>IUssdRunner</Name>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{7241964f-9a39-4f08-8c37-94c464d7220b}</Project>
+      <Name>Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
       <Name>Phone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Port\Port.csproj">
-      <Project>{0ecd59c8-7680-4032-85cc-c8232e9ebb28}</Project>
-      <Name>Port</Name>
     </ProjectReference>
     <ProjectReference Include="..\TelephoneExchange\TelephoneExchange.csproj">
       <Project>{ac89b530-601e-4952-818c-e21547165fa2}</Project>

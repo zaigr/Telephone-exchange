@@ -54,65 +54,33 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BalanceCheck\BalanceCheck.csproj">
-      <Project>{9b8dddc4-0221-4693-9cb6-8a832188c44c}</Project>
-      <Name>BalanceCheck</Name>
+    <ProjectReference Include="..\Billing.Data.Interfaces\Billing.Data.Interfaces.csproj">
+      <Project>{1ed3a24f-3e6f-40d3-9ff5-87f61d7648d0}</Project>
+      <Name>Billing.Data.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BasicTariff\BasicTariff.csproj">
-      <Project>{d98a98a0-3ec0-495e-8962-a93c1c22b79f}</Project>
-      <Name>BasicTariff</Name>
+    <ProjectReference Include="..\Billing.Data\Billing.Data.csproj">
+      <Project>{78efc4d4-53d4-4ce0-9747-1c972107a7e1}</Project>
+      <Name>Billing.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BillingUnitofWork\BillingUnitofWork.csproj">
-      <Project>{b6ccb2f7-efc7-4b99-abba-edd2c7f68724}</Project>
-      <Name>BillingUnitofWork</Name>
+    <ProjectReference Include="..\Billing.Interfaces\Billing.Interfaces.csproj">
+      <Project>{b37be6d5-2114-4df4-8f51-07055dfc3fd5}</Project>
+      <Name>Billing.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Billing\Billing.csproj">
-      <Project>{bf8876b7-b32e-4d3c-a292-1bfcafae8698}</Project>
-      <Name>Billing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Client\Client.csproj">
-      <Project>{34fe6d9e-cf1c-486c-8080-0cf3f3feeb0a}</Project>
-      <Name>Client</Name>
+    <ProjectReference Include="..\Billing.Tariffication\Billing.Tariffication.csproj">
+      <Project>{4466bb96-6a20-4831-91a2-820e2932bc69}</Project>
+      <Name>Billing.Tariffication</Name>
     </ProjectReference>
     <ProjectReference Include="..\ExchangeBilling\ExchangeBilling.csproj">
       <Project>{0b907c62-8301-4b76-b776-ea9253c8de17}</Project>
       <Name>ExchangeBilling</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IBalanceCheck\IBalanceCheck.csproj">
-      <Project>{3b20b78a-de85-426b-9d20-884f6acba6eb}</Project>
-      <Name>IBalanceCheck</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IExchangeBilling\IExchangeBilling.csproj">
-      <Project>{761b6eba-2bf4-437a-a718-3608519222dd}</Project>
-      <Name>IExchangeBilling</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IndividualClient\IndividualClient.csproj">
-      <Project>{c5784a52-3dbe-4cea-9e6f-de5af770087f}</Project>
-      <Name>IndividualClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IRepository\IRepository.csproj">
-      <Project>{844d7cd1-071f-4012-9d98-38e8ded2e481}</Project>
-      <Name>IRepository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ITariff\ITariff.csproj">
-      <Project>{d2fa4e81-e3cc-4904-a08d-f3797bc61292}</Project>
-      <Name>ITariff</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ITelephoneExchange.EventArgs\ITelephoneExchange.EventArgs.csproj">
-      <Project>{4ddd743c-b03e-408a-8048-9138246afd3a}</Project>
-      <Name>ITelephoneExchange.EventArgs</Name>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{7241964f-9a39-4f08-8c37-94c464d7220b}</Project>
+      <Name>Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
       <Name>Phone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Repositories\Repositories.csproj">
-      <Project>{1dd4185d-40c1-440c-aab3-59459c7fab38}</Project>
-      <Name>Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tariff\Tariff.csproj">
-      <Project>{b92b090c-843e-498e-aab4-54971c607ffb}</Project>
-      <Name>Tariff</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

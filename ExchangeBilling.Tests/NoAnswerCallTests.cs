@@ -7,6 +7,7 @@ using NUnit.Framework;
 using ATS.Interfaces;
 using ATS.Billing.Data;
 using ATS.Billing.Interfaces;
+using ATS.Billing.Tariffication;
 
 
 namespace ATS.Billing.Tests
