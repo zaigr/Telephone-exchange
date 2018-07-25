@@ -46,33 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mocks\ExchangeBilling.Mock.cs" />
-    <Compile Include="TerminalRingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PortConnectionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Billing.Data.Interfaces\Billing.Data.Interfaces.csproj">
-      <Project>{1ed3a24f-3e6f-40d3-9ff5-87f61d7648d0}</Project>
-      <Name>Billing.Data.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Billing.Data\Billing.Data.csproj">
-      <Project>{78efc4d4-53d4-4ce0-9747-1c972107a7e1}</Project>
-      <Name>Billing.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Billing.Interfaces\Billing.Interfaces.csproj">
       <Project>{b37be6d5-2114-4df4-8f51-07055dfc3fd5}</Project>
       <Name>Billing.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Billing.Tariffication\Billing.Tariffication.csproj">
-      <Project>{4466bb96-6a20-4831-91a2-820e2932bc69}</Project>
-      <Name>Billing.Tariffication</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ExchangeBilling\ExchangeBilling.csproj">
-      <Project>{0b907c62-8301-4b76-b776-ea9253c8de17}</Project>
-      <Name>ExchangeBilling</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{7241964f-9a39-4f08-8c37-94c464d7220b}</Project>
@@ -82,13 +65,21 @@
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
       <Name>Phone</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TelephoneExchange\TelephoneExchange.csproj">
-      <Project>{ac89b530-601e-4952-818c-e21547165fa2}</Project>
-      <Name>TelephoneExchange</Name>
+    <ProjectReference Include="..\PortConnectionFactory\PortConnectionFactory.csproj">
+      <Project>{9cfb7f3e-05e3-4abe-b821-4ce764ac0ab2}</Project>
+      <Name>PortConnectionFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Port\Port.csproj">
+      <Project>{747596d8-14d0-4b3e-9635-b7fd0b200de4}</Project>
+      <Name>Port</Name>
     </ProjectReference>
     <ProjectReference Include="..\Terminal\Terminal.csproj">
       <Project>{3363f700-515f-484a-819b-7d5d19656045}</Project>
       <Name>Terminal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UssdRunner\UssdRunner.csproj">
+      <Project>{9b909962-181b-4115-b5d9-8acc16888ce9}</Project>
+      <Name>UssdRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

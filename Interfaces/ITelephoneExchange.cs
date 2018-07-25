@@ -14,7 +14,7 @@ namespace ATS.Interfaces
         event EventHandler<RingEventArgs> AbonentsDisconnected;
         CallState DisconnectAbonents(Phone sender, Phone reciver);
 
-        bool ConnectToExchange(Phone phone);
-        bool DisconnectFromExchange(Phone phone);
+        int? ConnectPortToExchange();
+        int? DisconnectPortFromExchange();
     }
 }

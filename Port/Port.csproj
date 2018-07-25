@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7241964F-9A39-4F08-8C37-94C464D7220B}</ProjectGuid>
+    <ProjectGuid>{747596D8-14D0-4B3E-9635-B7FD0B200DE4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Interfaces</RootNamespace>
-    <AssemblyName>Interfaces</AssemblyName>
+    <RootNamespace>Port</RootNamespace>
+    <AssemblyName>Port</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,16 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\CallState.cs" />
-    <Compile Include="Common\PortState.cs" />
-    <Compile Include="EventArgs\RingEventArgs.cs" />
-    <Compile Include="IPort.cs" />
-    <Compile Include="IPortConnectionFactory.cs" />
-    <Compile Include="ITelephoneExchange.cs" />
-    <Compile Include="ITerminal.cs" />
+    <Compile Include="Port.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{7241964f-9a39-4f08-8c37-94c464d7220b}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Phone\Phone.csproj">
       <Project>{921c7c13-bb47-4132-a7f1-737f2ed83881}</Project>
       <Name>Phone</Name>

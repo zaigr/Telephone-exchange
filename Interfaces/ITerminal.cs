@@ -10,12 +10,19 @@ namespace ATS.Interfaces
     {
         Phone PhoneNumber { get; }
 
-        CallState MakeCall(Phone phone);
-        CallState ReceiveCall();
+        CallState MakeCall(Phone abonent);
+        CallState RecieveCall();
         CallState CloseCall();
 
-        bool ConnectToExchange();
-        bool DisconnectFromExchange();
+        event Func<RingEventArgs, CallState> StartCalling;
+        event Func<CallState> CallRecieved;
+        event Func<CallState> CallClosed;
+        
+        bool ConnectToPort();
+        void DisconnectFromPort();
+
+        event Func<ITerminal, IPort> ConnectingToPort;
+        event Action<ITerminal, IPort> DisconnectingFromPort;
 
         string RunUSSD(string request);
     }

@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace ATS.Interfaces
 {
-    public interface IPort : IComparable<IPort>
+    public interface IPort : IDisposable
     {
+        int Id { get; }
+
         PortState State { get; set; }
         event EventHandler<PortState> PortStateChanged;
-        
-        int Number { get; }
+
+        event EventHandler<RingEventArgs> TryingEstablishIncoming;
+        event EventHandler<RingEventArgs> TryingEstablishOutgoing;
+
+        CallState OpenConnection(RingEventArgs ea);
     }
 }
