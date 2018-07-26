@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminal", "Terminal\Terminal.csproj", "{3363F700-515F-484A-819B-7D5D19656045}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerminalUI", "UI\TerminalUI.csproj", "{2BBBC9EF-589E-4176-B89B-73CE8DB8A37E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminal.Tests", "Terminal.Tests\Terminal.Tests.csproj", "{206D23D5-D189-44E5-A5EC-1B4711AD5E86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone", "Phone\Phone.csproj", "{921C7C13-BB47-4132-A7F1-737F2ED83881}"
@@ -31,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Port", "Port\Port.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortConnectionFactory", "PortConnectionFactory\PortConnectionFactory.csproj", "{9CFB7F3E-05E3-4ABE-B821-4CE764AC0AB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneExchange", "TelephoneExchange\TelephoneExchange.csproj", "{CBED4FC1-5C6C-4C15-9A9D-E01D065DD7BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +41,6 @@ Global
 		{3363F700-515F-484A-819B-7D5D19656045}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3363F700-515F-484A-819B-7D5D19656045}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3363F700-515F-484A-819B-7D5D19656045}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2BBBC9EF-589E-4176-B89B-73CE8DB8A37E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2BBBC9EF-589E-4176-B89B-73CE8DB8A37E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2BBBC9EF-589E-4176-B89B-73CE8DB8A37E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2BBBC9EF-589E-4176-B89B-73CE8DB8A37E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{206D23D5-D189-44E5-A5EC-1B4711AD5E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{206D23D5-D189-44E5-A5EC-1B4711AD5E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{206D23D5-D189-44E5-A5EC-1B4711AD5E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -93,6 +89,10 @@ Global
 		{9CFB7F3E-05E3-4ABE-B821-4CE764AC0AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CFB7F3E-05E3-4ABE-B821-4CE764AC0AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CFB7F3E-05E3-4ABE-B821-4CE764AC0AB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBED4FC1-5C6C-4C15-9A9D-E01D065DD7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBED4FC1-5C6C-4C15-9A9D-E01D065DD7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBED4FC1-5C6C-4C15-9A9D-E01D065DD7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBED4FC1-5C6C-4C15-9A9D-E01D065DD7BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

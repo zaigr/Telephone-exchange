@@ -14,8 +14,9 @@ namespace ATS
         public Phone PhoneNumber { get; private set; }
 
         public event Func<RingEventArgs, CallState> StartCalling;
-        public event Func<CallState> CallRecieved;
-        public event Func<CallState> CallClosed;
+        public event Func<RingEventArgs, CallState> CallRecieved;
+        public event Func<RingEventArgs, CallState> CallClosed;
+
         public event Func<ITerminal, IPort> ConnectingToPort;
         public event Action<ITerminal, IPort> DisconnectingFromPort;
 
@@ -47,12 +48,17 @@ namespace ATS
             return OnStartCalling(abonent);
         }
 
-        public CallState RecieveCall()
+        public CallState RecieveCall(RingEventArgs ea)
         {
             throw new NotImplementedException();
         }
 
         public CallState CloseCall()
+        {
+            throw new NotImplementedException();
+        }
+
+        public CallState ConnectionEstablished(RingEventArgs eventArgs)
         {
             throw new NotImplementedException();
         }

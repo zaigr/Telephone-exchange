@@ -15,12 +15,21 @@ namespace ATS
         public PortState State { get; set; }
 
         public event EventHandler<PortState> PortStateChanged;
-        public event EventHandler<RingEventArgs> TryingEstablishIncoming;
-        public event EventHandler<RingEventArgs> TryingEstablishOutgoing;
+
+        public event Func<RingEventArgs, CallState> ConnectionEstablished;
+        public event Func<RingEventArgs, CallState> ConnectionReceived;
+
+        public event Func<PortExchangeEventArgs, bool> ConnectingToExchange;
+        public event Func<PortExchangeEventArgs, bool> DisconnectingFromExchange;
 
         public CallState OpenConnection(RingEventArgs ea)
         {
             return CallState.Connected;
+        }
+
+        public CallState CloseConnection(RingEventArgs ea)
+        {
+            return CallState.Disconnected;
         }
 
         public Port(int id)
@@ -42,8 +51,7 @@ namespace ATS
         public void Dispose()
         {
             PortStateChanged = null;
-            TryingEstablishIncoming = null;
-            TryingEstablishOutgoing = null;
+            
 
             State = PortState.Unused;
         }

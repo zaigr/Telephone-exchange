@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AC89B530-601E-4952-818C-E21547165FA2}</ProjectGuid>
+    <ProjectGuid>{CBED4FC1-5C6C-4C15-9A9D-E01D065DD7BF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TelephoneExchange</RootNamespace>
@@ -20,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,16 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Port.cs" />
-    <Compile Include="EventArgs\PortsConnectedEventArgs.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TelephoneExchange.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Billing.Interfaces\Billing.Interfaces.csproj">
-      <Project>{b37be6d5-2114-4df4-8f51-07055dfc3fd5}</Project>
-      <Name>Billing.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{7241964f-9a39-4f08-8c37-94c464d7220b}</Project>
       <Name>Interfaces</Name>

@@ -11,12 +11,14 @@ namespace ATS.Interfaces
         Phone PhoneNumber { get; }
 
         CallState MakeCall(Phone abonent);
-        CallState RecieveCall();
+        CallState RecieveCall(RingEventArgs ea);
         CallState CloseCall();
 
+        CallState ConnectionEstablished(RingEventArgs ea);
+
         event Func<RingEventArgs, CallState> StartCalling;
-        event Func<CallState> CallRecieved;
-        event Func<CallState> CallClosed;
+        event Func<RingEventArgs, CallState> CallRecieved;
+        event Func<RingEventArgs, CallState> CallClosed;
         
         bool ConnectToPort();
         void DisconnectFromPort();

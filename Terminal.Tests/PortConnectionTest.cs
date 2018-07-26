@@ -20,7 +20,8 @@ namespace ATS.Tests
             var portsId = new int[] { 1, 2, 3 };
             _ports = portsId.Select(id => new Port(id)).ToList();
 
-            IPortConnectionFactory connectionFactory = new PortConnectionFactory(_ports);
+            var telephoneExchange = new Mocks.TelephoneExchangeMock();
+            IPortConnectionFactory connectionFactory = new PortConnectionFactory(_ports, telephoneExchange);
 
             _terminal = new Terminal(new Phone(111), null);
             _terminal.ConnectingToPort += connectionFactory.Connect;

@@ -13,9 +13,13 @@ namespace ATS.Interfaces
         PortState State { get; set; }
         event EventHandler<PortState> PortStateChanged;
 
-        event EventHandler<RingEventArgs> TryingEstablishIncoming;
-        event EventHandler<RingEventArgs> TryingEstablishOutgoing;
+        event Func<RingEventArgs, CallState> ConnectionEstablished;
+        event Func<RingEventArgs, CallState> ConnectionReceived;
+
+        event Func<PortExchangeEventArgs, bool> ConnectingToExchange;
+        event Func<PortExchangeEventArgs, bool> DisconnectingFromExchange;
 
         CallState OpenConnection(RingEventArgs ea);
+        CallState CloseConnection(RingEventArgs ea);
     }
 }

@@ -11,9 +11,10 @@ namespace ATS
     {
         private readonly ISet<IPort> _freePorts;
 
-        public PortConnectionFactory(IEnumerable<IPort> ports)
+        public PortConnectionFactory(IEnumerable<IPort> ports, ITelephoneExchange exchange)
         {
             _freePorts = new HashSet<IPort>(ports);
+            ConnectPortsToExchange(exchange);
         }
 
         public IPort Connect(ITerminal terminal)
@@ -28,9 +29,23 @@ namespace ATS
             _freePorts.Remove(freePort);
 
             terminal.StartCalling += freePort.OpenConnection;
+            terminal.CallClosed += freePort.CloseConnection;
+
+            freePort.ConnectionReceived += terminal.RecieveCall;
+            freePort.ConnectionEstablished += terminal.ConnectionEstablished;
+
             freePort.State = PortState.Listened;
 
             return freePort;
+        }
+
+        protected void ConnectPortsToExchange(ITelephoneExchange exchange)
+        { 
+            foreach (var port in _freePorts)
+            {
+                port.ConnectingToExchange += exchange.ConnectPortToExchange;
+                port.DisconnectingFromExchange += exchange.DisconnectPortFromExchange;
+            }
         }
 
         public void Disconnect(ITerminal terminal, IPort port)

@@ -9,12 +9,12 @@ namespace ATS.Interfaces
     public interface ITelephoneExchange
     {
         event EventHandler<RingEventArgs> AbonentsConnected;
-        CallState ConnectAbonents(Phone sender, Phone reciver);
+        CallState ConnectAbonents(RingEventArgs eventArgs);
 
         event EventHandler<RingEventArgs> AbonentsDisconnected;
-        CallState DisconnectAbonents(Phone sender, Phone reciver);
+        CallState DisconnectAbonents(RingEventArgs eventArgs);
 
-        int? ConnectPortToExchange();
-        int? DisconnectPortFromExchange();
+        bool ConnectPortToExchange(PortExchangeEventArgs eventArgs);
+        bool DisconnectPortFromExchange(PortExchangeEventArgs eventArgs);
     }
 }
